@@ -1,3 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+.dropdown {
+    position: absolute;
+    top: 70px;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 155px;
+    text-align: center;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+}
+
+.dropdown__item {
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+    width: 100%;
+    display: block;
+    padding: 8px;
+}
+
+.show {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown__item:hover {
+    color: #F5C518;
+}
+
+.dropdown__item .fas {
+    padding-right: 15px;
+}
+
 .body {
     font-family: 'Roboto', sans-serif;
     display: none;
@@ -36,6 +75,21 @@
     font-size: 16px;
 }
 
+.navbar-top__user {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar-top__user:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .navbar-top__favorite--link:hover .fas {
     color: darkred;
 }
@@ -56,7 +110,74 @@
     color: gray;
 }
 
-main {
+.main {
+    padding: 30px 111px;
     background-color: black;
     color: #F7FFEF;
+}
+
+.main__movies {
+    margin: 20px 0;
+}
+
+.main__movies--title {
+    color: #F5C518;
+}
+
+.main_movies--body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.movies__body--card {
+    display: flex;
+    flex-direction: column;
+    background-color: #1A1A1A;
+    width: 240px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 35px;
+}
+
+.movies__body--card .body__card--img {
+    width: inherit;
+    height: 350px;
+}
+
+.movies__body--card .body__card--score .fas {
+    color: yellow;
+    padding-right: 10px;
+}
+
+.movies__body--card .body__card--title {
+    font-weight: 300;
+}
+
+.movies__body--card .body__card--button {
+    background-color: #3C3C3C;
+    border: 0;
+    border-radius: 5px;
+    color: #5799ef;
+    text-decoration: none;
+    font-weight: 300;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.body__card--score,
+.body__card--title,
+.body__card--button {
+    margin: 10px;
+}
+
+@media screen and (max-width: 590px) {
+    .navbar-top {
+        height: 140px;
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbar-top__search .input {
+        width: 100%;
+    }
 }
