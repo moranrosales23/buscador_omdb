@@ -1,0 +1,10 @@
+@media screen and (max-width: 590px) {
+    .navbar-top {
+        height: 140px;
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbar-top__search .input {
+        width: 100%;
+    }
+}

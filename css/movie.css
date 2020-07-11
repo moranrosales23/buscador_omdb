@@ -1,0 +1,39 @@
+.height {
+    height: 92vh;
+}
+
+.main__description {
+    display: flex;
+    background-color: #1A1A1A;
+    margin-top: 70px;
+    padding-right: 60px;
+}
+
+.main__description--data {
+    margin-left: 35px;
+}
+
+.main__description--poster {
+    display: flex;
+}
+
+.main__description--poster .img {
+    width: 380px;
+    height: 500px;
+}
+
+.description__data--body .body__card--button {
+    background-color: #3C3C3C;
+    border: 0;
+    border-radius: 5px;
+    color: #5799ef;
+    font-weight: 300;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+.description__data--body .body__card--button .fas {
+    padding-right: 5px;
+}

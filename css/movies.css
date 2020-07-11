@@ -1,0 +1,77 @@
+.main__movies {
+    margin: 20px 0;
+}
+
+.main__movies--title {
+    color: #F5C518;
+}
+
+.main_movies--body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.movies__body--card {
+    display: flex;
+    flex-direction: column;
+    background-color: #1A1A1A;
+    width: 240px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 35px;
+}
+
+.body__card--img {
+    width: inherit;
+    height: 350px;
+    width: 240px;
+}
+
+.body__card--score .fas {
+    color: yellow;
+    padding-right: 10px;
+}
+
+.body__card--title {
+    font-weight: 300;
+}
+
+.body__card--button {
+    background-color: #3C3C3C;
+    border: 0;
+    border-radius: 5px;
+    color: #5799ef;
+    text-decoration: none;
+    font-weight: 300;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.body__card--score,
+.body__card--title,
+.body__card--button {
+    margin: 10px;
+}
+
+.movies__body--card-row {
+    display: flex;
+}
+
+.body__card--img+.fas,
+.main__description--poster .img+.fas {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    width: 40px;
+}
+
+.body__card--img+.fas:hover,
+.main__description--poster .img+.fas:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.favorite_active {
+    color: red;
+}

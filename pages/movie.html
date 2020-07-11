@@ -15,23 +15,44 @@
     <header class="navbar-top">
         <div class="navbar-top__favorite">
             <img class="navbar-top__logo" src="../img/logo1.png" alt="logo" />
-            <a class="navbar-top__favorite--link" href="#">Favoritos <i class="fas fa-heart"></i></a>
+            <a class="navbar-top__favorite--link" href="#">Favorite <i class="fas fa-heart"></i></a>
         </div>
 
         <div class="navbar-top__user">
             <span id="user">Jhonny Pacheco <i class="fas fa-angle-down"></i></span>
             <div class="dropdown">
-                <a class="dropdown__item" href="#"><i class="fas fa-sign-out-alt"></i> Salir</a>
+                <a class="dropdown__item" href="#"><i class="fas fa-sign-out-alt"></i> Log out</a>
             </div>
         </div>
     </header>
-    <main class="main">
+    <main class="main height">
         <div class="main__description">
-            <div class="main__description--poster">
-                <img src="../img/poster.jpg" alt="poster" />
+            <div class="main__description--poster" id="movies">
+                <img class="img" src="../img/poster.jpg" alt="poster" />
+                <i class="fas fa-heart"></i>
             </div>
             <div class="main__description--data">
-
+                <h2>Titulaso(2020)</h2>
+                <hr />
+                <div class="description__data--body">
+                    <p><span class="data__body--subtitle">Director: </span></p>
+                    <p><span class="data__body--subtitle">Actors: </span></p>
+                    <p><span class="data__body--subtitle">Genre: </span></p>
+                    <p><span class="data__body--subtitle">Released: </span></p>
+                    <p>
+                        <span class="data__body--subtitle">Score: </span>
+                        <span class="body__card--score">
+                            <i class="fas fa-star"></i>8.8
+                        </span>
+                    </p>
+                    <p>
+                        <span class="data__body--subtitle">Description: </span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio accusantium adipisci maiores deleniti eligendi vel quibusdam id tenetur voluptas doloribus quasi animi
+                        consequatur, non fuga voluptate quia consectetur libero itaque.
+                    </p>
+                    <button class="body__card--button" type="button">
+                        <i class="fas fa-arrow-left"></i> Volver
+                    </button>
+                </div>
             </div>
         </div>
     </main>
