@@ -1,5 +1,10 @@
 import { Storage } from '../Services/Storage.js';
+import { Sesion } from '../Services/Sesion.js';
+import { Request } from '../Services/Request.js';
+
 const STORAGE = new Storage();
+const SESION = new Sesion();
+const REQUEST = new Request();
 const data = [{
         "Title": "B",
         "Year": "2015",
@@ -54,9 +59,9 @@ Movie.prototype.template = function(data) {
                 <i class="fas fa-star"></i>${data.imdbRating}
             </span>
             <h3 class="body__card--title">${data.Title}</h3>
-            <a href="./movie.html?q=${data.imdbID}" class="body__card--button">
+            <button type="button" data-idm="${data.imdbID}" class="body__card--button">
                 <i class="far fa-eye"></i> Ver
-            </a>
+            </button>
         </div>
     `;
 }
@@ -70,6 +75,58 @@ Movie.prototype.listAll = function(elementHtml) {
         html += this.template(iterator);
     }
     elementHtml.innerHTML = html;
+}
+
+Movie.prototype.favorite = function() {
+    const hash = SESION.getData().hash;
+    const favorites = STORAGE.favorites();
+    if (favorites.hasOwnProperty(hash)) {
+        for (const favorite of favorites[hash]) {
+            REQUEST.searchMovieByID(favorite).then(movie => {
+                document.getElementById('movies').innerHTML += this.template(movie);
+            });
+        }
+    }
+}
+
+Movie.prototype.viewDescription = function() {
+    const id = window.location.href.split('?q=');
+    if (id.length === 2) {
+        REQUEST.searchMovieByID(id[1]).then(data => {
+            document.getElementById('movies').innerHTML = this.descriptionMovie(data);
+        });
+    }
+}
+
+Movie.prototype.descriptionMovie = function(data) {
+    return `
+        <div class="main__description--poster">
+            <img class="img" src="${this.getUrlPoster(data.Poster)}" alt="poster" />
+            <i class="fas fa-heart ${this.addClass(data.imdbID)}" title="add favorite" data-idm="${data.imdbID}"></i>
+        </div>
+        <div class="main__description--data">
+            <h2>${data.Title}(${data.Year})</h2>
+            <hr />
+            <div class="description__data--body">
+                <p><span class="data__body--subtitle">Director: </span>${data.Director}</p>
+                <p><span class="data__body--subtitle">Actors: </span>${data.Actors}</p>
+                <p><span class="data__body--subtitle">Genre: </span>${data.Genre}</p>
+                <p><span class="data__body--subtitle">Released: </span>${data.Released}</p>
+                <p>
+                    <span class="data__body--subtitle">Score: </span>
+                    <span class="body__card--score">
+                        <i class="fas fa-star"></i>${data.imdbRating}
+                    </span>
+                </p>
+                <p>
+                    <span class="data__body--subtitle">Description: </span> ${data.Plot}
+                </p>
+                <button class="body__card--button" type="button">
+                    <i class="fas fa-arrow-left"></i> Volver
+                </button>
+            </div>
+        </div>
+    `;
 }
 
 Movie.prototype.addClass = function(id) {

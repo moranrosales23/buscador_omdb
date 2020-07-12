@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie</title>
+    <title>Favorites</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/styles.css" />
@@ -15,18 +15,21 @@
     <header class="navbar-top">
         <div class="navbar-top__favorite">
             <img class="navbar-top__logo" src="../img/logo1.png" alt="logo" />
-            <a class="navbar-top__favorite--link" href="./favorites.html">Favorites <i class="fas fa-heart"></i></a>
+            <a class="navbar-top__favorite--link" href="./movies.html">Movies <i class="fas fa-film"></i></a>
         </div>
 
         <div class="navbar-top__user">
-            <span id="user">Jhonny Pacheco <i class="fas fa-angle-down"></i></span>
+            <span id="user"><i class="fas fa-angle-down"></i></span>
             <div class="dropdown">
                 <a class="dropdown__item" href="#" id="log-out"><i class="fas fa-sign-out-alt"></i> Log Out</a>
             </div>
         </div>
     </header>
     <main class="main height">
-        <div id="movies" class="main__description">
+        <div class="main__movies">
+            <h2 class="main__movies--title">Favorites:</h2>
+            <div id="movies" class="main_movies--body">
+            </div>
         </div>
     </main>
     <script src="../js/scripts.js" type="module"></script>

@@ -46,6 +46,12 @@
     font-weight: 300;
     padding: 10px 0;
     text-align: center;
+    cursor: pointer;
+}
+
+.body__card--button .fas,
+.body__card--button .far {
+    pointer-events: none;
 }
 
 .body__card--score,

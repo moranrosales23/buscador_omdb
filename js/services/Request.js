@@ -5,3 +5,7 @@ export function Request() {}
 Request.prototype.searchMovieByTitle = function(name) {
     return fetch(`${API}t=${name}`).then(response => response.json());
 }
+
+Request.prototype.searchMovieByID = function(id) {
+    return fetch(`${API}i=${id}`).then(response => response.json());
+}

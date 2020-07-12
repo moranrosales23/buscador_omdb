@@ -15,4 +15,5 @@
     padding: 30px 111px;
     background-color: black;
     color: #F7FFEF;
+    min-height: 100vh;
 }

@@ -23,6 +23,10 @@ Sesion.prototype.save = function(data) {
 }
 
 Sesion.prototype.getData = function() {
-    const session = JSON.parse(sessionStorage.getItem('user'));
+    const session = (this.exists()) ? JSON.parse(sessionStorage.getItem('user')) : {};
     return session;
+}
+
+Sesion.prototype.clear = function() {
+    sessionStorage.clear();
 }
