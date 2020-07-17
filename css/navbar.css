@@ -38,7 +38,6 @@
     align-items: center;
     padding: 0 10px;
     cursor: pointer;
-    display: flex;
     flex-direction: column;
     justify-content: center;
 }
@@ -51,6 +50,10 @@
     color: red;
 }
 
+.navbar-top__search {
+    display: flex;
+}
+
 .navbar-top__search .input {
     width: 560px;
     height: 28px;
@@ -58,7 +61,6 @@
     padding-left: 10px;
     border: 1px solid white;
     border-radius: 4px;
-    text-transform: lowercase;
 }
 
 .navbar-top__search .fas {

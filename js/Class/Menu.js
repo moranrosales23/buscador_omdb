@@ -33,11 +33,11 @@ Menu.prototype.search = function() {
         const search_movie = this.value.trim();
         const reference_movie = document.getElementById('movies');
         if (search_movie !== '') {
-            REQUEST.searchMovieByTitle(search_movie).then((movie) => {
-                if (movie.hasOwnProperty('Error')) {
-                    reference_movie.innerHTML = '<p class="message">Movie or Serie not exists.</p>'
+            REQUEST.searchMovieByTitle(search_movie).then((movies) => {
+                if (movies.hasOwnProperty('Error')) {
+                    MOVIE.messageError(reference_movie);
                 } else {
-                    reference_movie.innerHTML = MOVIE.template(movie);
+                    MOVIE.fillPage(movies, reference_movie);
                 }
             });
         } else {

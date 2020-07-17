@@ -3,7 +3,7 @@ import { Storage } from '../Services/Storage.js';
 const STORAGE = new Storage();
 
 export function Favorite() {}
-//href="./movie.html?q="
+
 Favorite.prototype.addEvent = function() {
     document.getElementById('movies').addEventListener('click', event => {
         if (event.target.classList.contains('fa-heart')) {

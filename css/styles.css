@@ -16,4 +16,5 @@
     background-color: black;
     color: #F7FFEF;
     min-height: 100vh;
+    max-height: 100%;
 }

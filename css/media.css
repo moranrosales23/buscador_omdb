@@ -1,10 +1,32 @@
-@media screen and (max-width: 590px) {
-    .navbar-top {
-        height: 140px;
-        width: 100%;
-        flex-direction: column;
+    @media screen and (max-width: 870px) {
+        .navbar-top {
+            display: flex;
+            flex-flow: row wrap;
+            height: 140px;
+            width: 100%;
+        }
+        .navbar-top__search .input,
+        .navbar-top__search {
+            width: 100%;
+            padding-left: 8px;
+        }
+        .navbar-top__favorite,
+        .navbar-top__user {
+            order: 2;
+        }
+        .navbar-top__user {
+            height: 50px;
+        }
+        .navbar-top__search {
+            order: 1;
+        }
+        .dropdown {
+            top: 140px;
+        }
     }
-    .navbar-top__search .input {
-        width: 100%;
+    
+    @media screen and (max-width: 590px) {
+        .navbar-top__logo {
+            display: none;
+        }
     }
-}

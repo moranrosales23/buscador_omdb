@@ -35,6 +35,7 @@
 
 .body__card--title {
     font-weight: 300;
+    height: 50px;
 }
 
 .body__card--button {
