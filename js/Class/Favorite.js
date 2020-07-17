@@ -10,7 +10,7 @@ Favorite.prototype.addEvent = function() {
             event.target.classList.toggle('favorite_active');
             this.addOrRemove(event);
         } else if (event.target.classList.contains('body__card--button')) {
-            if (event.target.outerText === ' Ver') {
+            if (event.target.outerText === ' See') {
                 sessionStorage.setItem('path', window.location.pathname);
                 const instance = document.getElementById('txt_search');
                 if (instance !== null) {
@@ -27,6 +27,9 @@ Favorite.prototype.addEvent = function() {
 }
 
 Favorite.prototype.addOrRemove = function(event) {
+    if (!sessionStorage.hasOwnProperty('user')) {
+        window.location.reload();
+    }
     const id_movie = event.target.dataset.idm;
     STORAGE.action(id_movie);
 }

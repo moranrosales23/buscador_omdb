@@ -20,7 +20,7 @@ Movie.prototype.template = function(data) {
             </span>
             <h4 class="body__card--title">${data.Title}</h4>
             <button type="button" data-idm="${data.imdbID}" class="body__card--button">
-                <i class="far fa-eye"></i> Ver
+                <i class="far fa-eye"></i> See
             </button>
         </div>
     `;
@@ -102,7 +102,7 @@ Movie.prototype.descriptionMovie = function(data) {
                     <span class="data__body--subtitle">Description: </span> ${data.Plot}
                 </p>
                 <button class="body__card--button" type="button">
-                    <i class="fas fa-arrow-left"></i> Volver
+                    <i class="fas fa-arrow-left"></i> Back
                 </button>
             </div>
         </div>
