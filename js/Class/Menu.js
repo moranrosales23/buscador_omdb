@@ -29,19 +29,21 @@ Menu.prototype.logOut = function(event) {
 }
 
 Menu.prototype.search = function() {
-    document.getElementById('txt_search').addEventListener('keyup', function(event) {
-        const search_movie = this.value.trim();
-        const reference_movie = document.getElementById('movies');
-        if (search_movie !== '') {
-            REQUEST.searchMovieByTitle(search_movie).then((movies) => {
-                if (movies.hasOwnProperty('Error')) {
-                    MOVIE.messageError(reference_movie);
-                } else {
-                    MOVIE.fillPage(movies, reference_movie);
-                }
-            });
-        } else {
-            MOVIE.listAll(reference_movie);
-        }
-    });
+    document.getElementById('txt_search').addEventListener('keyup', this.requestMovie);
+}
+
+Menu.prototype.requestMovie = function() {
+    const search_movie = this.value.trim();
+    const reference_movie = document.getElementById('movies');
+    if (search_movie !== '') {
+        REQUEST.searchMovieByTitle(search_movie).then((movies) => {
+            if (movies.hasOwnProperty('Error')) {
+                MOVIE.messageError(reference_movie);
+            } else {
+                MOVIE.fillPage(movies, reference_movie);
+            }
+        });
+    } else {
+        MOVIE.listAll(reference_movie);
+    }
 }

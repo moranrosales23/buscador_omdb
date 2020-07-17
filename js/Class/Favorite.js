@@ -12,6 +12,10 @@ Favorite.prototype.addEvent = function() {
         } else if (event.target.classList.contains('body__card--button')) {
             if (event.target.outerText === ' Ver') {
                 sessionStorage.setItem('path', window.location.pathname);
+                const instance = document.getElementById('txt_search');
+                if (instance !== null) {
+                    sessionStorage.setItem('last_search', instance.value);
+                }
                 window.location.href = `${window.location.origin}/pages/movie.html?q=${event.target.dataset.idm}`;
             } else {
                 const path = sessionStorage.getItem('path');
